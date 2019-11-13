@@ -8,7 +8,8 @@ public class HelloWorld {
         // Prints "Hello, World" to the terminal window.
         System.out.println("Hello World!");
 	try{
-	    String cmd = "/usr/bin/python -c \"print('hello world')\"";
+	    //String cmd = "/usr/bin/python -c \"print('hello world')\"";
+            String cmd = "/usr/bin/python -c \"import os;os._exit(1)\"";
 	    System.out.println(cmd);
 	    Process p = Runtime.getRuntime().exec(
 			    new String[]{ "java", "-version" }
@@ -16,7 +17,7 @@ public class HelloWorld {
 	    int exitVal = p.waitFor();
             System.out.println("Process exitValue: " + exitVal);
 	    System.out.println(p);
-	    InputStream out = p.getInputStream();
+	    OutputStream out = p.getOutputStream();
 	    PrintStream prtStrm=new PrintStream(out);
 	    prtStrm.println();
 	} catch (Exception ex) {
