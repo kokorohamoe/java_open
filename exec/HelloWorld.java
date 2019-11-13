@@ -12,15 +12,13 @@ public class HelloWorld {
             String cmd = "/usr/bin/python -c \"import os;os._exit(1)\"";
 	    System.out.println(cmd);
 	    Process p = Runtime.getRuntime().exec(
-			    new String[]{ "java", "-version" }
+			    new String[]{ "/usr/bin/id" }
 			    );
 	    int exitVal = p.waitFor();
             System.out.println("Process exitValue: " + exitVal);
 	    System.out.println(p);
-	    OutputStream out = p.getOutputStream();
-	    PrintStream prtStrm=new PrintStream(out);
-	    prtStrm.println();
 	} catch (Exception ex) {
+	    System.out.println("Exception");
 	    System.out.println(ex);
 	}
     }

@@ -5,11 +5,9 @@ import java.util.Scanner;
 public class exec_test {
 
 	public static void main(String[] args) {
-		Scanner s = new Scanner(System.in);
-		while(true){
-			System.out.println("Enter the command you want to execute: ");
-			String cmd = s.next();
-			System.out.println(cmd);
+		if(true){
+			String cmd = "/usr/bin/python -h";
+			//System.out.println(cmd);
 		
 			try {
 				Process process = Runtime.getRuntime().exec(cmd);
